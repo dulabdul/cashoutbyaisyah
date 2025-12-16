@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'Cashout SPayLater & Boost PayFlex | Trusted Fast Cair - CashoutByAisyah',
   description:
     'Perkhidmatan pencairan limit Shopee PayLater (SPayLater), Boost PayFlex, dan Grab PayLater yang pantas, selamat, dan dipercayai di Malaysia. Cairkan tunai segera!',
-  metadataBase: new URL('https://cashoutbyaisyah.com'),
+  metadataBase: new URL('https://www.cashoutbyaisyah.com'),
   alternates: {
     canonical: '/',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'Cashout SPayLater & Boost PayFlex Malaysia',
     description:
       'Tukar limit PayLater anda jadi cash tunai dalam 5 minit. Selamat & Trusted.',
-    url: 'https://cashoutbyaisyah.com',
+    url: 'https://www.cashoutbyaisyah.com',
     siteName: 'CashoutByAisyah',
     images: [
       {

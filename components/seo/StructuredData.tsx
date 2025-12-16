@@ -5,7 +5,7 @@ export const StructuredData = () => {
     '@context': 'https://schema.org',
     '@type': 'FinancialService',
     name: 'Cashout By Aisyah',
-    image: 'https://cashoutbyaisyah.com/images/og-image.jpg',
+    image: 'https://www.cashoutbyaisyah.com/images/og-image.jpg',
     description:
       'Perkhidmatan pencairan limit PayLater (Shopee, Boost, Grab) yang selamat dan pantas di Malaysia.',
     address: {

@@ -1,9 +1,7 @@
 import { ImageResponse } from 'next/og';
 
-// Route segment config
 export const runtime = 'edge';
 
-// Image metadata
 export const alt = 'Cashout SPayLater & Boost PayFlex - CashoutByAisyah';
 export const size = {
   width: 1200,
@@ -12,132 +10,159 @@ export const size = {
 
 export const contentType = 'image/png';
 
-// Image generation
 export default async function Image() {
-  // Font data (Optional: Load font if needed, here using system sans-serif for speed)
-  // const interSemiBold = fetch(new URL('./Inter-SemiBold.ttf', import.meta.url)).then((res) => res.arrayBuffer())
+  // Logic URL Absolute (sama seperti sebelumnya)
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL
+    ? process.env.NEXT_PUBLIC_APP_URL
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
+
+  const heroImageSrc = `${baseUrl}/images/hero-img.png`;
 
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           height: '100%',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#EE4D2D', // Shopee Orange Primary Color
-          backgroundImage: 'linear-gradient(to bottom right, #EE4D2D, #C03518)',
-          color: 'white',
+          backgroundColor: '#f8f9fa',
           fontFamily: 'sans-serif',
-          position: 'relative',
+          padding: '40px',
         }}>
-        {/* Decorative Circle Background */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '-100px',
-            right: '-100px',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-50px',
-            left: '-50px',
-            width: '300px',
-            height: '300px',
-            borderRadius: '50%',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          }}
-        />
-
-        {/* Main Content */}
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 10,
+            justifyContent: 'space-between',
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'white',
+            borderRadius: '24px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+            padding: '40px',
+            overflow: 'hidden', // Mencegah overflow keluar card utama
           }}>
-          {/* Badge */}
+          {/* Kolom Kiri: Gambar (Diperkecil sedikit jadi 40% agar teks lebih lega) */}
           <div
             style={{
               display: 'flex',
-              backgroundColor: 'white',
-              color: '#EE4D2D',
-              padding: '10px 24px',
-              borderRadius: '50px',
-              fontSize: 24,
-              fontWeight: 800,
-              marginBottom: 20,
-              boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+              width: '40%',
+              height: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              marginRight: '20px', // Jarak antar kolom
             }}>
-            TRUSTED & FAST
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                border: '6px solid white',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                transform: 'rotate(-2deg)',
+                display: 'flex',
+              }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={heroImageSrc}
+                alt='Cashout Hero'
+                width='100%'
+                height='100%'
+                style={{
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
           </div>
 
-          {/* Title */}
-          <h1
-            style={{
-              fontSize: 80,
-              fontWeight: 900,
-              margin: 0,
-              marginBottom: 10,
-              textAlign: 'center',
-              textShadow: '2px 2px 4px rgba(0,0,0,0.2)',
-            }}>
-            CashoutByAisyah
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            style={{
-              fontSize: 32,
-              margin: 0,
-              opacity: 0.9,
-              textAlign: 'center',
-              maxWidth: '900px',
-            }}>
-            Cairkan SPayLater • Boost PayFlex • Grab PayLater
-          </p>
-
-          {/* Features / Icons mockup text */}
+          {/* Kolom Kanan: Teks (Diperlebar jadi 60% dan Font Size disesuaikan) */}
           <div
             style={{
               display: 'flex',
-              marginTop: 40,
-              gap: 20,
-              opacity: 0.9,
-              fontSize: 24,
-              fontWeight: 600,
+              flexDirection: 'column',
+              justifyContent: 'center',
+              width: '60%', // Area lebih luas
+              height: '100%',
             }}>
-            <span>✅ Proses 5 Menit</span>
-            <span>•</span>
-            <span>✅ Rate Terbaik</span>
-            <span>•</span>
-            <span>✅ Amanah</span>
+            {/* Domain Chip */}
+            <div
+              style={{
+                backgroundColor: '#f0f2f5',
+                padding: '8px 16px',
+                borderRadius: '50px',
+                fontSize: '16px',
+                fontWeight: '600',
+                color: '#4b5563',
+                marginBottom: '20px',
+                alignSelf: 'flex-start',
+              }}>
+              cashoutbyaisyah.com
+            </div>
+
+            {/* Judul Utama - Ukuran Font Dikurangi dari 56px ke 48px */}
+            <h1
+              style={{
+                fontSize: '48px', // REVISI: Ukuran pas agar tidak kepotong
+                fontWeight: '900',
+                lineHeight: '1.1',
+                color: '#111827',
+                margin: '0 0 16px 0',
+                display: 'flex',
+                flexDirection: 'column', // Pastikan teks turun ke bawah (wrap)
+              }}>
+              <span>SPAYLATER</span>
+              <span>BOOSTPAYFLEX</span>
+            </h1>
+
+            {/* Deskripsi */}
+            <p
+              style={{
+                fontSize: '22px',
+                lineHeight: '1.4',
+                color: '#4b5563',
+                margin: '0 0 32px 0',
+                maxWidth: '90%', // Mencegah deskripsi terlalu lebar
+              }}>
+              Cairkan limit Shopee & Boost Anda jadi tunai.{' '}
+              <span
+                style={{
+                  color: '#EE4D2D',
+                  fontWeight: 'bold',
+                  marginLeft: '6px',
+                }}>
+                Aman & Cepat.
+              </span>
+            </p>
+
+            {/* Tombol CTA */}
+            <div
+              style={{
+                backgroundColor: '#EE4D2D',
+                color: 'white',
+                padding: '14px 28px',
+                borderRadius: '50px',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                alignSelf: 'flex-start',
+                boxShadow: '0 4px 12px rgba(238, 77, 45, 0.3)',
+              }}>
+              Cairkan Sekarang
+            </div>
           </div>
         </div>
       </div>
     ),
-    // ImageResponse options
     {
-      // Untuk hasil terbaik, Anda bisa load font Google (Inter/Poppins) di sini
-      // fonts: [
-      //   {
-      //     name: 'Inter',
-      //     data: await interSemiBold,
-      //     style: 'normal',
-      //     weight: 400,
-      //   },
-      // ],
       ...size,
     }
   );
