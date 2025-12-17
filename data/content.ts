@@ -70,7 +70,7 @@ export const content: Record<"my" | "en", ContentData> = {
       copyright: "© 2025 CashoutByAisyah. All rights reserved."
     },
     whatsapp: {
-      message: ""
+      message: "Cashout paylater (spaylater/boost)"
     }
   },
   en: {
