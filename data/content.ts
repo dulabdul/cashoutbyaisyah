@@ -141,7 +141,7 @@ export const content: Record<"my" | "en", ContentData> = {
       copyright: "© 2025 CashoutByAisyah. All rights reserved."
     },
     whatsapp: {
-      message: "Hello, I am interested in cashing out my PayLater limit (SPayLater/Boost/Grab). Can you help?"
+      message: "Cashout paylater (spaylater/boost)"
     }
   }
 };
