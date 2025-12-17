@@ -11,13 +11,18 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
-  // Logic URL Absolute (sama seperti sebelumnya)
+  // LOGIKA PENENTUAN URL:
+  // 1. Cek apakah ada Custom Domain (NEXT_PUBLIC_APP_URL) -> Prioritas Utama
+  // 2. Jika tidak, cek apakah sedang di Vercel Preview (VERCEL_URL)
+  // 3. Jika tidak, anggap di Localhost
+
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL
     ? process.env.NEXT_PUBLIC_APP_URL
     : process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}`
     : 'http://localhost:3000';
 
+  // Gabungkan URL dengan path gambar
   const heroImageSrc = `${baseUrl}/images/hero-img.png`;
 
   return new ImageResponse(
@@ -45,9 +50,9 @@ export default async function Image() {
             borderRadius: '24px',
             boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
             padding: '40px',
-            overflow: 'hidden', // Mencegah overflow keluar card utama
+            overflow: 'hidden',
           }}>
-          {/* Kolom Kiri: Gambar (Diperkecil sedikit jadi 40% agar teks lebih lega) */}
+          {/* KOLOM KIRI: GAMBAR */}
           <div
             style={{
               display: 'flex',
@@ -56,7 +61,7 @@ export default async function Image() {
               alignItems: 'center',
               justifyContent: 'center',
               position: 'relative',
-              marginRight: '20px', // Jarak antar kolom
+              marginRight: '20px',
             }}>
             <div
               style={{
@@ -82,16 +87,15 @@ export default async function Image() {
             </div>
           </div>
 
-          {/* Kolom Kanan: Teks (Diperlebar jadi 60% dan Font Size disesuaikan) */}
+          {/* KOLOM KANAN: TEKS */}
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              width: '60%', // Area lebih luas
+              width: '60%',
               height: '100%',
             }}>
-            {/* Domain Chip */}
             <div
               style={{
                 backgroundColor: '#f0f2f5',
@@ -106,29 +110,27 @@ export default async function Image() {
               cashoutbyaisyah.com
             </div>
 
-            {/* Judul Utama - Ukuran Font Dikurangi dari 56px ke 48px */}
             <h1
               style={{
-                fontSize: '48px', // REVISI: Ukuran pas agar tidak kepotong
+                fontSize: '48px',
                 fontWeight: '900',
                 lineHeight: '1.1',
                 color: '#111827',
                 margin: '0 0 16px 0',
                 display: 'flex',
-                flexDirection: 'column', // Pastikan teks turun ke bawah (wrap)
+                flexDirection: 'column',
               }}>
               <span>SPAYLATER</span>
               <span>BOOSTPAYFLEX</span>
             </h1>
 
-            {/* Deskripsi */}
             <p
               style={{
                 fontSize: '22px',
                 lineHeight: '1.4',
                 color: '#4b5563',
                 margin: '0 0 32px 0',
-                maxWidth: '90%', // Mencegah deskripsi terlalu lebar
+                maxWidth: '90%',
               }}>
               Cairkan limit Shopee & Boost Anda jadi tunai.{' '}
               <span
@@ -141,7 +143,6 @@ export default async function Image() {
               </span>
             </p>
 
-            {/* Tombol CTA */}
             <div
               style={{
                 backgroundColor: '#EE4D2D',
