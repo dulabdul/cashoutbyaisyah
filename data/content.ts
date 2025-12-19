@@ -54,7 +54,7 @@ export const content: Record<"my" | "en", ContentData> = {
     },
     testimonials: {
       title: "Testimoni Pelanggan",
-      items: Array.from({ length: 7 }).map((_, i) => ({
+      items: Array.from({ length: 4 }).map((_, i) => ({
         id: i,
         src: `/images/testimoni/testi${i+1}.jpeg`, // Pastikan file ini ada nanti
         alt: `Testimoni Cashout ${i + 1}`
