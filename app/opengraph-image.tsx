@@ -157,7 +157,7 @@ export default async function Image() {
                 alignSelf: 'flex-start',
                 boxShadow: '0 4px 12px rgba(238, 77, 45, 0.3)',
               }}>
-              Cairkan Sekarang
+              Cashout Sekarang
             </div>
           </div>
         </div>

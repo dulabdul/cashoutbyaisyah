@@ -15,7 +15,7 @@ export const content: Record<"my" | "en", ContentData> = {
     hero: {
       headline: "SPAYLATER BOOSTPAYFLEX",
       desc: "CASHOUT KILAT, TAK PERLU MENUNGGU! Ada limit PayLater dalam SPayLater, Boost, dan Grab? Nak tukar jadi tunai?",
-      cta: "Cairkan Sekarang",
+      cta: "Cashout Sekarang",
       stats: [
         { value: "5000+", label: "Transaksi Berjaya" },
         { value: "RM 2M+", label: "Total Dicairkan" },
@@ -61,7 +61,7 @@ export const content: Record<"my" | "en", ContentData> = {
       }))
     },
     contact: {
-      title: "Perlu Dana Segera? Hubungi Kami!",
+      title: "Nak Cashout Paylater? Hubungi Kami!",
       desc: "Jangan biarkan kebutuhan mendesak menghambat Anda. Tim kami siap membantu pencairan limit Anda dengan aman.",
       cta: "Hubungi Sekarang"
     },
