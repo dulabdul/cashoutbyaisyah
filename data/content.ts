@@ -199,7 +199,7 @@ export const content = {
   },
   testimonials: {
     title: "Testimoni Pelanggan",
-    items: Array.from({ length: 7 }).map((_, i) => ({
+    items: Array.from({ length: 4 }).map((_, i) => ({
       id: i,
       src: `/images/testi-${i + 1}.jpg`,
       alt: `Testimoni Cashout ${i + 1}`
