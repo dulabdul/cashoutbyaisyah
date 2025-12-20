@@ -1,7 +1,7 @@
-import { useLanguage } from "@/context/LanguageContext";
-
+// import { useLanguage } from "@/context/LanguageContext";
+import { content as t } from "@/data/content";
 export const useWhatsApp = () => {
-  const { t } = useLanguage();
+
   
   // Ganti dengan nomor asli Anda
   const WA_NUMBER = "601172215239"; 

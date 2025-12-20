@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
-import { useLanguage } from '@/context/LanguageContext';
+// import { useLanguage } from '@/context/LanguageContext';
+import { content as t } from '@/data/content';
 import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
 import { useWhatsApp } from '@/hooks/useWhatsApp'; // Import Hook
 export const Hero = () => {
-  const { t } = useLanguage();
   const waLink = useWhatsApp();
   return (
     <section

@@ -4,10 +4,10 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import { useLanguage } from '@/context/LanguageContext';
+// import { useLanguage } from '@/context/LanguageContext';
+import { content as t } from '@/data/content';
 
 export const Testimonials = () => {
-  const { t } = useLanguage();
   const [emblaRef] = useEmblaCarousel({
     loop: true,
     align: 'center', // Center active slide agar fokus

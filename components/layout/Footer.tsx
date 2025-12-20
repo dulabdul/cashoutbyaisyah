@@ -1,9 +1,8 @@
 'use client';
-import { useLanguage } from '@/context/LanguageContext';
+// import { useLanguage } from '@/context/LanguageContext';
+import { content as t } from '@/data/content';
 
 export const Footer = () => {
-  const { t } = useLanguage();
-
   return (
     <footer className='bg-gray-900 text-gray-300 py-12'>
       <div className='container-custom grid md:grid-cols-2 gap-8'>

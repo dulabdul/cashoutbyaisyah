@@ -1,15 +1,13 @@
 'use client';
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { content as t } from '@/data/content';
 
 // Ganti dengan nomor WhatsApp asli Anda (format internasional tanpa '+')
 // Contoh: 601172215239
 const WA_NUMBER = '601172215239';
 
 export const FloatingWhatsApp = () => {
-  const { t } = useLanguage();
-
   // Mengambil pesan dari file content.ts berdasarkan bahasa aktif
   // encodeURIComponent penting agar spasi dan karakter khusus terbaca dengan benar di URL
   const encodedMessage = encodeURIComponent(t.whatsapp.message);

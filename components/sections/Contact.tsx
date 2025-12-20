@@ -1,10 +1,10 @@
 'use client';
-import { useLanguage } from '@/context/LanguageContext';
+// import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/Button';
 import { useWhatsApp } from '@/hooks/useWhatsApp'; // Import Hook
-
+import { content as t } from '@/data/content';
 export const Contact = () => {
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
   const waLink = useWhatsApp(); // Generate link WA dinamis
 
   return (

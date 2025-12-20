@@ -1,10 +1,9 @@
 'use client';
-import { useLanguage } from '@/context/LanguageContext';
+// import { useLanguage } from '@/context/LanguageContext';
+import { content as t } from '@/data/content';
 import { ShoppingBag, Zap, Car } from 'lucide-react';
 
 export const Services = () => {
-  const { t } = useLanguage();
-
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'shopee':

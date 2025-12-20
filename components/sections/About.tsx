@@ -1,13 +1,12 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { useLanguage } from '@/context/LanguageContext';
+// import { useLanguage } from '@/context/LanguageContext';
+import { content as t } from '@/data/content';
 import { Button } from '@/components/ui/Button';
 import { CheckCircle2 } from 'lucide-react';
 
 export const About = () => {
-  const { t } = useLanguage();
-
   // Gambar ilustrasi CS/Professional (Asian look)
   // Nanti bisa diganti dengan file lokal: "/images/about-us.jpg"
   const imageSrc = '/images/about-min.jpg';

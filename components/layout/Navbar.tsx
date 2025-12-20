@@ -2,12 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Globe } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+// import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
-
+import { content as t } from '@/data/content';
 export const Navbar = () => {
-  const { t, lang, toggleLanguage } = useLanguage();
+  // const { t, lang, toggleLanguage } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -54,22 +54,10 @@ export const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={toggleLanguage}
-            className='flex items-center gap-1 px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 text-xs font-semibold'
-            aria-label='Switch Language'>
-            <Globe className='w-4 h-4' />
-            {lang === 'my' ? 'EN' : 'MY'}
-          </button>
         </nav>
 
         {/* Mobile Toggle */}
         <div className='flex items-center gap-4 md:hidden'>
-          <button
-            onClick={toggleLanguage}
-            className='text-xs font-bold px-2 py-1 bg-gray-100 rounded'>
-            {lang === 'my' ? 'EN' : 'MY'}
-          </button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label='Toggle Menu'>

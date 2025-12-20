@@ -8,15 +8,14 @@ import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingWhatsApp } from '@/components/features/FloatingWhatsApp';
 import { ScrollToTop } from '@/components/features/ScrollToTop';
-import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
+// import { LanguageProvider, useLanguage } from '@/context/LanguageContext';
 import { Shield, Clock, Headphones, Percent, Lock, Users } from 'lucide-react';
 import { About } from '@/components/sections/About';
-
+import { content as t } from '@/data/content';
 // Components for About, Why, Advantages defined inline here for simplicity
 // or you can separate them like Hero/Services if preferred.
 
 const WhyChooseUs = () => {
-  const { t } = useLanguage();
   return (
     <section
       id='why'
@@ -30,8 +29,6 @@ const WhyChooseUs = () => {
 };
 
 const Advantages = () => {
-  const { t } = useLanguage();
-
   const getIcon = (i: number) => {
     const icons = [Clock, Shield, Users, Percent, Lock, Headphones];
     const Icon = icons[i] || Shield;
@@ -64,22 +61,37 @@ const Advantages = () => {
 
 export default function Home() {
   return (
-    <LanguageProvider>
-      <div className='relative min-h-screen'>
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <WhyChooseUs />
-          <Services />
-          <Advantages />
-          <Testimonials />
-          <Contact />
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
-        <ScrollToTop />
-      </div>
-    </LanguageProvider>
+    <div className='relative min-h-screen'>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <WhyChooseUs />
+        <Services />
+        <Advantages />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingWhatsApp />
+      <ScrollToTop />
+    </div>
+    // <LanguageProvider>
+    //   <div className='relative min-h-screen'>
+    //     <Navbar />
+    //     <main>
+    //       <Hero />
+    //       <About />
+    //       <WhyChooseUs />
+    //       <Services />
+    //       <Advantages />
+    //       <Testimonials />
+    //       <Contact />
+    //     </main>
+    //     <Footer />
+    //     <FloatingWhatsApp />
+    //     <ScrollToTop />
+    //   </div>
+    // </LanguageProvider>
   );
 }
