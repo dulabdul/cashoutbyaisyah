@@ -4,7 +4,7 @@ export const useWhatsApp = () => {
   const { t } = useLanguage();
   
   // Ganti dengan nomor asli Anda
-  const WA_NUMBER = "601172215239"; 
+  const WA_NUMBER = "60169308217"; 
   
   // Mengambil pesan dari language context dan meng-encode-nya agar aman untuk URL
   const message = encodeURIComponent(t.whatsapp.message);

@@ -4,8 +4,8 @@ import { MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 // Ganti dengan nomor WhatsApp asli Anda (format internasional tanpa '+')
-// Contoh: 601172215239
-const WA_NUMBER = '601172215239';
+// Contoh: 60169308217
+const WA_NUMBER = '60169308217';
 
 export const FloatingWhatsApp = () => {
   const { t } = useLanguage();
