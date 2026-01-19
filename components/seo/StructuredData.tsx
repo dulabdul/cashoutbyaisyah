@@ -13,7 +13,7 @@ export const StructuredData = () => {
       addressCountry: 'MY',
     },
     priceRange: '$$',
-    telephone: '+60169308217',
+    telephone: '+601111270048',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
