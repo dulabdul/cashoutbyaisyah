@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.cashoutbyaisyah.com';
+  const baseUrl = 'https://www.cashoutbyaisyah.net';
 
   return [
     {
